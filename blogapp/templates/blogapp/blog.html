@@ -1,4 +1,5 @@
 {% extends 'blogapp/base.html' %}
+{% load blog_tags %}
 {% load static %}
 
 {% block title %}
@@ -6,13 +7,22 @@
 {% endblock %}
 
 {% block content %}
+    <a href="{% url 'blogapp:blog_feed' %}">Подпишись на новости</a>
     {% for post in posts %}
         <a href="{{ post.get_absolute_url }}">
             <h2>{{ post.title }}</h2>
         </a>
-        <p>Автор: {{ post.author.username }}</p>
-        <p>Дата создания: {{ post.created }}</p>
-        <p>{{ post.body|linebreaksbr }}</p>
+        <p class="tags">
+            Tags:
+            {% for tag in post.tags.all %}
+                <a href="{% url 'blogapp:post_by_tag' tag.slug %}">
+                    {{ tag.name }}
+                </a>
+                {% if not forloop.last %}, {% endif %}
+            {% endfor %}
+        </p>
+        <p>{{ post.body|markdown|truncatewords:30 }}</p>
+        <p class="date">Опубликован: {{ post.publish }} {{ post.author }}</p>
     {% endfor %}
-    {% include 'blogapp/pagination.html' with page=page_obj %}
+    {% include 'blogapp/pagination.html' with page=posts %}
 {% endblock %}

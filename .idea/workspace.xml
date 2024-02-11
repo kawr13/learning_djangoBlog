@@ -5,31 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c21f70a-b11f-4d9c-9708-6e27209a39bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/blogproject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/blog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/blog_detailed.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/pagination.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogapp/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogproject/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogproject/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogproject/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogproject/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogproject/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogapp/feeds.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogapp/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogapp/multitask.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogapp/templates/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/blog_search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/latest_posts.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogapp/templatetags/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/blogapp/templatetags/blog_tags.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogapp/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogapp/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogapp/templates/blogapp/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogapp/templates/blogapp/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogapp/templates/blogapp/blog_detailed.html" beforeDir="false" afterPath="$PROJECT_DIR$/blogapp/templates/blogapp/blog_detailed.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogapp/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blogproject/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/debug.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +37,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -66,18 +61,28 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "/home/kawr/Документы/my_project_folder/blogproject/blogapp/templates/blogapp",
+    "last_opened_file_path": "/home/kawr/Документы/my_project_folder/blogproject/db.sqlite3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.tabs",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/blogapp/templates/blogapp" />
+      <recent name="$PROJECT_DIR$/blogapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/blogapp/templatetags" />
       <recent name="$PROJECT_DIR$/blogapp/templates/blogapp" />
       <recent name="$PROJECT_DIR$/blogapp" />
     </key>
@@ -127,7 +132,9 @@
       <workItem from="1707406875235" duration="1852000" />
       <workItem from="1707415136102" duration="2000" />
       <workItem from="1707555411148" duration="1856000" />
-      <workItem from="1707557534080" duration="9512000" />
+      <workItem from="1707557534080" duration="26379000" />
+      <workItem from="1707603832532" duration="9299000" />
+      <workItem from="1707655294749" duration="23260000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,5 @@
 {% extends 'blogapp/base.html' %}
+{% load blog_tags %}
 {% load static %}
 
 {% block title %}
@@ -14,11 +15,75 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ post.title }}</h5>
                         <p class="card-text">Автор: {{ post.author.username }}</p>
-                        <p class="card-text">Дата создания: {{ post.created }}</p>
-                        <p class="card-text">{{ post.body|linebreaksbr }}</p>
+                        <p class="card-text">Дата создания: {{ post.created_at }}</p>
+                        <p class="card-text">{{ post.body|markdown }}</p>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#postFormModal">
+                            Отправить пост
+                        </button>
                     </div>
+                    <div class="card-footer">
+                    {% with comments.count as total_comments %}
+                        {{ total_comments }} comment{{ total_comments|pluralize }}
+                    {% endwith %}
+                        <form method="post", action="{% url 'blogapp:email_send' post.id %}">
+                            {% csrf_token %}
+                            {{ commentsform.as_p }}
+                            {% if commentsform.errors %}
+                                <p style="color: red;">There are errors in the form:</p>
+                                {{ commentsform.errors }}
+                            {% endif %}
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                    {% for comment in comments %}
+                        <div class="card mb-3">
+                            <div class="comment">
+                                <div class="card-body">
+                                    <h5 class="card-title">comment {{ forloop.counter }} by {{ comment.username }}</h5>
+                                    <p class="card-text">{{ comment.body|linebreaks }}</p>
+                                    <p class="card-text"><small class="text-muted">{{ comment.created }}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <p>No comments here yet :(</p>
+                    {% endfor %}
+                    <h2>Similar posts</h2>
+                        {% for post in similar_posts %}
+                        <p>
+                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                        </p>
+                        {% empty %}
+                        There are no similar posts.
+                        {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="postFormModal" tabindex="-1" role="dialog" aria-labelledby="postFormModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="postFormModalLabel">Отправить пост</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post", action="{% url 'blogapp:email_send' post.id %}">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and its dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 {% endblock %}

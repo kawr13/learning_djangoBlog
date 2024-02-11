@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import mark_safe
-from blogapp.models import Post, User
+from blogapp.models import Post, User, Comments
 
 
 # Register your models here.
@@ -31,3 +31,10 @@ class PostAdmin(admin.ModelAdmin):
             return 'Нет изображения'
 
     display_image.short_description = 'Изображение'
+
+
+@admin.register(Comments)
+class CommentsAdmin(admin.ModelAdmin):
+    list_display = ('username', 'post', 'email', 'created', 'active')
+    list_filter = ('active', 'created', 'updated')
+    search_fields = ('username', 'body', 'email')
